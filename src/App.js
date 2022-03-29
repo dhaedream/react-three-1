@@ -2,15 +2,20 @@ import { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh } from "three";
 
+// adding useSpring, animated for Animation
+import { useSpring, animated } from "@react-spring/three";
+
 function Cube(props) {
   const mesh = useRef();
 
   useFrame(() => (mesh.current.rotation.x += 0.01));
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
+  // adding scale object as variable
+  const { scale } = useSpring({ scale: click ? 1.5 : 1 });
 
   return (
-    <mesh
+    <animated.mesh
       ref={mesh}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
@@ -20,7 +25,7 @@ function Cube(props) {
     >
       <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial color={hover ? "hotpink" : "pink"} />
-    </mesh>
+    </animated.mesh>
   );
 }
 
