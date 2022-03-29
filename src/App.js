@@ -4,6 +4,9 @@ import { Mesh } from "three";
 
 function Cube(props) {
   const mesh = useRef();
+
+  useFrame(() => (mesh.current.rotation.x += 0.01));
+
   return (
     <mesh ref={mesh}>
       <boxGeometry args={[2, 2, 2]} />
