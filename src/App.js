@@ -1,4 +1,5 @@
-import "./App.css";
+import { useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 
 function App() {
   return (
