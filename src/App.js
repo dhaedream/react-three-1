@@ -2,7 +2,11 @@ import { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
 function App() {
-  return <Canvas></Canvas>;
+  return (
+    <Canvas>
+      <Cube />
+    </Canvas>
+  );
 }
 
 export default App;
