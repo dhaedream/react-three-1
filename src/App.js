@@ -12,12 +12,12 @@ function Cube(props) {
   return (
     <mesh
       ref={mesh}
-      // using a handeler to + arrow function to interact on hover
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
       <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color={"pink"} />
+      {/* if hover is tru=> hotpink, if falsey=> pink */}
+      <meshStandardMaterial color={hover ? "hotpink" : "pink"} />
     </mesh>
   );
 }
