@@ -16,6 +16,7 @@ function Cube(props) {
       onPointerOut={(event) => setHover(false)}
       onClick={(event) => setClick(!click)}
       scale={click ? 1.5 : 1}
+      {...props}
     >
       <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial color={hover ? "hotpink" : "pink"} />
@@ -28,6 +29,7 @@ function App() {
     <Canvas>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
+      {/* cubes still stacked on top of each other */}
       <Cube position={[-1.2, 0, 0]} />
       <Cube position={[1.2, 0, 0]} />
     </Canvas>
