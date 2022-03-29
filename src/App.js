@@ -14,6 +14,7 @@ function Cube(props) {
 function App() {
   return (
     <Canvas>
+      {/* cube r5endered */}
       <Cube />
     </Canvas>
   );
