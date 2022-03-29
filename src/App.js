@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh } from "three";
 
-// adding useSpring, animated for Animation
-import { useSpring, animated } from "@react-spring/three";
+// adding config
+import { useSpring, animated, config } from "@react-spring/three";
 
 function Cube(props) {
   const mesh = useRef();
@@ -11,8 +11,11 @@ function Cube(props) {
   useFrame(() => (mesh.current.rotation.x += 0.01));
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
-  // adding scale object as variable
-  const { scale } = useSpring({ scale: click ? 1.5 : 1 });
+  // adding config to wobble babyy
+  const { scale } = useSpring({
+    scale: click ? 1.5 : 1,
+    config: config.wobbly,
+  });
 
   return (
     <animated.mesh
@@ -20,7 +23,7 @@ function Cube(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
       onClick={(event) => setClick(!click)}
-      // this too
+      // passing config also
       scale={scale}
       {...props}
     >
