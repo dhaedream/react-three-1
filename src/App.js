@@ -14,6 +14,7 @@ function Cube(props) {
       ref={mesh}
       // using a handeler to + arrow function to interact on hover
       onPointerOver={(event) => setHover(true)}
+      onPointerOut={(event) => setHover(false)}
     >
       <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial color={"pink"} />
