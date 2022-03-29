@@ -7,6 +7,7 @@ function Cube(props) {
   return (
     <mesh ref={mesh}>
       <boxGeometry args={[2, 2, 2]} />
+      <meshBasicMaterial color={"pink"} />
     </mesh>
   );
 }
@@ -14,7 +15,6 @@ function Cube(props) {
 function App() {
   return (
     <Canvas>
-      {/* cube r5endered */}
       <Cube />
     </Canvas>
   );
