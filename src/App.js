@@ -18,6 +18,7 @@ function Cube(props) {
 function App() {
   return (
     <Canvas>
+      {/* thelights */}
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Cube />
