@@ -4,7 +4,11 @@ import { Mesh } from "three";
 
 function Cube(props) {
   const mesh = useRef();
-  return <Mesh></Mesh>;
+  return (
+    <mesh ref={mesh}>
+      <boxGeometry args={[2, 2, 2]} />
+    </mesh>
+  );
 }
 
 function App() {
