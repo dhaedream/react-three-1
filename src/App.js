@@ -20,7 +20,8 @@ function Cube(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
       onClick={(event) => setClick(!click)}
-      scale={click ? 1.5 : 1}
+      // this too
+      scale={scale}
       {...props}
     >
       <boxGeometry args={[2, 2, 2]} />
